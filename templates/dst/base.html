@@ -1,0 +1,21 @@
+{% extends 'dst/bootstrap.html' %}
+
+{% load bootstrap3 %}
+
+{% block bootstrap3_content %}
+
+  {% include "dst/nav.html" %}
+
+  <div class="wrapper">
+    <div class="container">
+
+      <div id="notifications">
+        {% autoescape off %}{% bootstrap_messages %}{% endautoescape %}
+      </div>
+
+    {% block content %}{% endblock %}
+
+    </div>
+  </div>
+
+{% endblock %}

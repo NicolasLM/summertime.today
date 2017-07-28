@@ -1,0 +1,49 @@
+{% extends 'dst/base.html' %}
+
+{% load bootstrap3 columns %}
+
+{% block title %}Manage DST notifications{% endblock %}
+
+{% block content %}
+
+    <h1>Manage DST notifications</h1>
+
+    <p>You will receive an email whenever a selected city toggles Daylight Saving Time.</p>
+
+    <form role="form" method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label class="control-label" for="id_cities_0">Cities</label>
+            <div id="id_cities">
+
+            <div class="row">
+            {% for col in form.cities|columns:3 %}
+                <div class="col-md-4">
+                    {% for checkbox in col %}
+
+                    <label style="margin-bottom: 1.2em" class="checkbox" for="{{ checkbox.id_for_label }}">
+                        <input {% if checkbox.data.selected %}checked="checked"{% endif %} data-toggle="checkbox" id="{{ checkbox.id_for_label }}" name="{{ checkbox.data.name }}" title="" type="checkbox" value="{{ checkbox.data.value }}" />
+                        {{ checkbox.data.label }}
+                    </label>
+
+                    {% endfor %}
+                </div>
+            {% endfor %}
+
+            </div>
+            </div>
+        </div>
+        <div class="text-right">
+            {% bootstrap_button "Save" button_type="submit" button_class="btn-primary" extra_classes="btn-fill" %}
+        </div>
+
+
+    </form>
+
+    <div class="text-left">
+        <button id="activate-all" class="btn btn-sm">Activate all</button>
+        <button id="deactivate-all" class="btn btn-sm">Deactivate all</button>
+    </div>
+
+{% endblock %}

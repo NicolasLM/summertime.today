@@ -1,0 +1,28 @@
+{% extends "dst/base.html" %}
+
+{% load i18n %}
+{% load bootstrap3 %}
+
+{% block title %}Delete account{% endblock %}
+
+{% block content %}
+
+    <h1>Delete account</h1>
+
+    <p>Are you sure you want to delete your account? You will stop receiving DST notifications.</p>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <form role="form" method="post" action="{% url 'deactivate_account' %}">
+                {% csrf_token %}
+                {% bootstrap_form form layout='inline' %}
+                {% buttons submit="Delete account" %}
+                {% endbuttons %}
+            </form>
+        </div>
+
+    </div>
+
+
+{% endblock %}

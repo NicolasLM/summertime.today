@@ -1,0 +1,45 @@
+{% extends 'dst/base.html' %}
+
+{% load account socialaccount summer %}
+
+{% block title %}{% user_display user %}{% endblock %}
+
+{% block content %}
+
+    {% get_social_accounts user as accounts %}
+
+    <div class="row">
+
+        <h1>Your account</h1>
+
+        <h2>Information</h2>
+        <ul>
+            <li>Username: {{ user.username }}</li>
+            <li>Email: {{ user.email }}</li>
+        </ul>
+
+        <h2>Notifications</h2>
+        <a href="{% url 'subscriptions' %}" class="btn btn-fill btn-info">Manage notifications</a>
+
+        <h2>Security</h2>
+        {% user_has_usable_password user as has_usable_password %}
+        {% if not accounts %}
+            <p>You connect to this website via your username ({{ user.username }}) and your password.</p>
+            <a href="{% url 'account_change_password' %}" class="btn btn-fill btn-warning">Change password</a>
+        {% elif not has_usable_password %}
+            <p>Your account is connected with a social identity.</p>
+            <p>You do not have a password on this website. You can create one if you want to be able to connect via your username ({{ user.username }}) and a password.</p>
+            <p>Even if you create a password, you will still be able to login with your social account.</p>
+            <a href="{% url 'account_change_password' %}" class="btn btn-fill btn-warning">Create a password</a>
+        {% else %}
+            <p>Your account is connected with a social identity and you also have a password on this website.</p>
+            <p>You can connect to this website either via your social identity or via your username ({{ user.username }}) and your password.</p>
+            <a href="{% url 'account_change_password' %}" class="btn btn-fill btn-warning">Change password</a>
+        {% endif %}
+
+        <h2>Danger zone</h2>
+        <a href="{% url 'deactivate_account' %}" class="btn btn-fill btn-danger pull-left">Delete this account</a>
+
+    </div>
+
+{% endblock %}

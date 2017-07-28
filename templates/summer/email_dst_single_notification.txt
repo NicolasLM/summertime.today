@@ -1,0 +1,6 @@
+Hi {{ display_name }},
+
+{{ cities.0.name }} ({{ cities.0.iata_code }}) turned DST {% if cities.0.has_dst %}on{% else %}off{% endif %}. You might need to adjust your clock.
+
+Best,
+Signature

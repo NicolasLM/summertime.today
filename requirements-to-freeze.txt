@@ -1,0 +1,14 @@
+Django
+django-allauth
+django-bootstrap3
+django-debug-toolbar
+django-compressor
+django-columns
+
+psycopg2
+redis
+celery
+opbeat
+gunicorn
+
+pytz

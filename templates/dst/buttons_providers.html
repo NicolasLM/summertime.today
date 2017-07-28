@@ -1,0 +1,17 @@
+{% load socialaccount %}
+
+{% get_providers as socialaccount_providers %}
+{% for provider in socialaccount_providers %}
+    {% if provider.name == 'GitHub' %}
+        <a class="btn btn-social btn-fill btn-github" role="button" href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
+            <i class="fa fa-lg fa-github"></i> Connect with Github
+        </a>
+    {% elif provider.name == 'Google' %}
+        <a class="btn btn-social btn-fill btn-google" role="button" href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
+            <i class="fa fa-lg fa-google-plus"></i> Connect with Google
+        </a>
+    {% else %}
+        <a class="btn btn-primary btn-lg" role="button" href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">{{provider.name}}</a>
+    {% endif %}
+{% endfor %}
+

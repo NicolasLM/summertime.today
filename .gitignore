@@ -1,0 +1,6 @@
+.cache
+.DS_Store
+settings_*.py
+__pycache__
+*.pyc
+celerybeat-schedule.*

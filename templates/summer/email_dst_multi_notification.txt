@@ -1,0 +1,10 @@
+Hi {{ display_name }},
+
+A few cities recently changed their time:
+{% for city in cities %}
+* {{ city.name }} ({{ city.iata_code }}) turned DST {% if city.has_dst %}on{% else %}off{% endif %}{% endfor %}
+
+You might need to adjust your clock for these cities.
+
+Best,
+Signature

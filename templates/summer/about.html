@@ -1,0 +1,36 @@
+{% extends 'dst/base.html' %}
+
+{% block title %}About {{ site.name }} {% endblock %}
+
+{% block content %}
+
+    <h1>About this website</h1>
+
+    <h2>Why?</h2>
+    <p>
+        I own a wrist watch with world time feature. I don't often need to check the time in Tokyo,
+        but when I do I like it to be accurate, not one hour off.
+    </p>
+    <p>
+        Cities that make use of <b>Daylight Saving Time</b> enable and disable DST at arbitrary dates of the year.
+        Without an automated system to keep track of DST changes over the world, I always had some
+        cities off.
+    </p>
+    <p>
+        I figured out that the best way to solve this problem was to receive a notification whenever a city
+        enables or disables DST. I could not find any existing service doing that, so here we are.
+    </p>
+
+    <h2>Who?</h2>
+    <p>
+        This website is maintained by <a href="https://lemanchet.fr">Nicolas Le Manchet</a>.
+        The code behind it is open source, you can find it <a href="https://github.com/NicolasLM/summertime.today">on Github</a>.
+    </p>
+
+    <h2>Help?</h2>
+    <p>
+        Do you want to add a city to the list? Did you find a bug?
+        If you need anything just email <b>hello@summertime.today</b>.
+    </p>
+
+{% endblock %}

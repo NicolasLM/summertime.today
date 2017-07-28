@@ -1,0 +1,39 @@
+{% extends "account/base.html" %}
+
+{% load bootstrap3 i18n account socialaccount %}
+
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+    <h1>Register</h1>
+
+    <p>Already have an account? Then no need to create another one, you can <a href="{{ login_url }}">log in</a> instead.</p>
+    <p>Why do I need an account to receive DST notifications?</p>
+    <ul>
+        <li>To make sure that the email address we will send the notifications at is correct</li>
+        <li>To customize the cities you track</li>
+        <li>You can delete your account easily at any time</li>
+    </ul>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Connect with social media</h2>
+            <p>Create your account in less than 3 seconds.</p>
+            {% include "dst/buttons_providers.html" %}
+        </div>
+
+        <div class="col-md-6">
+            <h2>Create an account</h2>
+            <form role="form" method="post" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+                {% bootstrap_form form layout='inline' %}
+                {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                {% buttons submit="Create account" reset="Cancel" %}{% endbuttons %}
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

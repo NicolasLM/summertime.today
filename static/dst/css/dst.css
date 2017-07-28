@@ -1,0 +1,80 @@
+html {
+    height: 100%;
+}
+body {
+    padding-top: 60px;
+    height: 100%;
+}
+
+#notifications {
+    margin-top: 40px;
+}
+
+.alert {
+    padding-right: 30px;
+}
+
+.icon-no-dst {
+    color: transparent;
+}
+
+#subscribe-title {
+    margin: 10px;
+}
+#subscribe-row {
+    margin: 50px;
+}
+
+
+
+
+.btn-github {
+  border-color: #333333;
+  color: #333333;
+}
+.btn-github:hover, .btn-github:focus, .btn-github:active, .btn-github.active, .open > .btn-github.dropdown-toggle {
+  background-color: transparent;
+  color: #333333;
+  border-color: #333333;
+  opacity: 1;
+}
+.btn-github:disabled, .btn-github[disabled], .btn-github.disabled {
+  background-color: transparent;
+  border-color: #333333;
+}
+.btn-github.btn-fill {
+  color: #FFFFFF;
+  background-color: #333333;
+  opacity: 0.9;
+}
+.btn-github.btn-fill:hover, .btn-github.btn-fill:focus, .btn-github.btn-fill:active, .btn-github.btn-fill.active, .open > .btn-github.btn-fill.dropdown-toggle {
+  background-color: #333333;
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+
+.btn-google {
+  border-color: #dd4b39;
+  color: #dd4b39;
+}
+.btn-google:hover, .btn-google:focus, .btn-google:active, .btn-google.active, .open > .btn-google.dropdown-toggle {
+  background-color: transparent;
+  color: #dd4b39;
+  border-color: #dd4b39;
+  opacity: 1;
+}
+.btn-google:disabled, .btn-google[disabled], .btn-google.disabled {
+  background-color: transparent;
+  border-color: #dd4b39;
+}
+.btn-google.btn-fill {
+  color: #FFFFFF;
+  background-color: #dd4b39;
+  opacity: 0.9;
+}
+.btn-google.btn-fill:hover, .btn-google.btn-fill:focus, .btn-google.btn-fill:active, .btn-google.btn-fill.active, .open > .btn-google.btn-fill.dropdown-toggle {
+  background-color: #dd4b39;
+  color: #FFFFFF;
+  opacity: 1;
+}
